@@ -58,6 +58,7 @@
 								<configuration>
 									<spotbugsXmlOutputDirectory>${project.basedir}</spotbugsXmlOutputDirectory>
 									<excludeFilterFile>${user.home}/.qub/spotbugs-exclude.xml</excludeFilterFile>
+									<maxHeap>2048</maxHeap>
 									<plugins>
 										<plugin>
 											<groupId>com.mebigfatguy.sb-contrib</groupId>
