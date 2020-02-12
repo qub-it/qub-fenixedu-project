@@ -24,6 +24,17 @@
 		<version.spotbugs.plugin.sb-contrib>7.4.6</version.spotbugs.plugin.sb-contrib>
 		<version.spotbugs.plugin.findsec>1.9.0</version.spotbugs.plugin.findsec>
 		<version.checkStyles.plugin>3.1.0</version.checkStyles.plugin>
+
+		<java.compilation.release>11</java.compilation.release>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.org.apache.maven.plugins.maven.compiler.plugin>3.8.0</version.org.apache.maven.plugins.maven.compiler.plugin>
+
+		<version.org.apache.maven.plugins.maven.javadoc.plugin>3.1.1</version.org.apache.maven.plugins.maven.javadoc.plugin>
+
+		<version.pt.ist.fenix.framework>2.8.0</version.pt.ist.fenix.framework>
+		<version.pt.ist.ff.maven.plugin>${version.pt.ist.fenix.framework}</version.pt.ist.ff.maven.plugin>
+
+		<version.org.apache.maven.plugins.maven.jar.plugin>3.2.0</version.org.apache.maven.plugins.maven.jar.plugin>
 	</properties>
 
 	<profiles>
@@ -102,6 +113,55 @@
 		</profile>
 	</profiles>
 
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${version.org.apache.maven.plugins.maven.compiler.plugin}</version>
+					<configuration>
+						<verbose>false</verbose>
+						<release>${java.compilation.release}</release>
+						<maxmem>2048</maxmem>
+						<meminitial>1024</meminitial>
+						<fork>true</fork>
+					</configuration>
+					<executions>
+						<execution>
+							<id>default-compile</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>compile</goal>
+							</goals>
+							<configuration>
+								<verbose>false</verbose>
+								<fork>true</fork>
+								<release>${java.compilation.release}</release>
+								<maxmem>2048</maxmem>
+								<meminitial>1024</meminitial>
+							</configuration>
+						</execution>
+						<execution>
+							<id>default-testCompile</id>
+							<phase>test-compile</phase>
+							<goals>
+								<goal>testCompile</goal>
+							</goals>
+							<configuration>
+								<verbose>false</verbose>
+								<fork>true</fork>
+								<release>${java.compilation.release}</release>
+								<maxmem>2048</maxmem>
+								<meminitial>1024</meminitial>
+							</configuration>
+						</execution>
+					</executions>
+
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 	<distributionManagement>
 		<repository>
 			<id>qubIT-repo</id>
