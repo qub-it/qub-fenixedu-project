@@ -98,7 +98,7 @@
 									<goal>check</goal>
 								</goals>
 								<configuration>
-									<configLocation>${user.home}/.ivy2/qub/google_modified_checks.xml</configLocation>
+									<configLocation>${user.home}/.qub/google_modified_checks.xml</configLocation>
 									<encoding>${project.build.sourceEncoding}</encoding>
 									<outputFile>${project.basedir}/checkstyle_errors.xml</outputFile>
 									<outputFileFormat>xml</outputFileFormat>
@@ -107,6 +107,33 @@
 								</configuration>
 							</execution>
 						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-pmd-plugin</artifactId>
+						<version>3.13.0</version>
+						<executions>
+							<execution>
+								<id>validate-duplicate-code</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>cpd</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<targetDirectory>${project.basedir}</targetDirectory>
+							<linkXref>true</linkXref>
+							<sourceEncoding>utf-8</sourceEncoding>
+							<minimumTokens>100</minimumTokens>
+							<targetJdk>11</targetJdk>
+							<excludes>
+								<exclude>**/*_Base.java</exclude>
+							</excludes>
+							<excludeRoots>
+								<excludeRoot>target/generated-sources/*</excludeRoot>
+							</excludeRoots>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
