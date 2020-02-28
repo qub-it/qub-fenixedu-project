@@ -1,3 +1,4 @@
+1.0.1-rc-jdk11 (28-02-2020)
 1.0.1 (10-09-2019)
 - Improvement: increated maxHeap used by spotbugs to 2048mb
 
