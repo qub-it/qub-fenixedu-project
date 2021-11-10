@@ -189,6 +189,22 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+	<repositories>
+                <repository>
+                        <id>ulisboa-repo</id>
+                        <url>http://nexjen.ulisboa.pt/nexus/content/groups/public/</url>
+                </repository>
+                <repository>
+                        <id>qubIT-repo-public</id>
+                        <url>https://repository.qub-it.com/nexus/content/groups/public</url>
+                </repository>
+                <repository>
+                        <id>qubIT-repo</id>
+                        <url>https://repository.qub-it.com/nexus/content/groups/qubITRepo</url>
+                </repository>
+        </repositories>
+
 	<distributionManagement>
 		<repository>
 			<id>qubIT-repo</id>
