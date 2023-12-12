@@ -67,19 +67,23 @@
 									<goal>spotbugs</goal>
 								</goals>
 								<configuration>
-									<spotbugsXmlOutputDirectory>${project.basedir}</spotbugsXmlOutputDirectory>
-									<excludeFilterFile>${user.home}/.qub/spotbugs-exclude.xml</excludeFilterFile>
+									<spotbugsXmlOutputDirectory>
+										${project.basedir}</spotbugsXmlOutputDirectory>
+									<excludeFilterFile>
+										${user.home}/.qub/spotbugs-exclude.xml</excludeFilterFile>
 									<maxHeap>2048</maxHeap>
 									<plugins>
 										<plugin>
 											<groupId>com.mebigfatguy.sb-contrib</groupId>
 											<artifactId>sb-contrib</artifactId>
-											<version>${version.spotbugs.plugin.sb-contrib}</version>
+											<version>
+												${version.spotbugs.plugin.sb-contrib}</version>
 										</plugin>
 										<plugin>
 											<groupId>com.h3xstream.findsecbugs</groupId>
 											<artifactId>findsecbugs-plugin</artifactId>
-											<version>${version.spotbugs.plugin.findsec}</version>
+											<version>
+												${version.spotbugs.plugin.findsec}</version>
 										</plugin>
 									</plugins>
 								</configuration>
@@ -98,9 +102,11 @@
 									<goal>check</goal>
 								</goals>
 								<configuration>
-									<configLocation>${user.home}/.qub/google_modified_checks.xml</configLocation>
+									<configLocation>
+										${user.home}/.qub/google_modified_checks.xml</configLocation>
 									<encoding>${project.build.sourceEncoding}</encoding>
-									<outputFile>${project.basedir}/checkstyle_errors.xml</outputFile>
+									<outputFile>
+										${project.basedir}/checkstyle_errors.xml</outputFile>
 									<outputFileFormat>xml</outputFileFormat>
 									<failsOnError>false</failsOnError>
 									<linkXRef>false</linkXRef>
@@ -146,7 +152,8 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${version.org.apache.maven.plugins.maven.compiler.plugin}</version>
+					<version>
+						${version.org.apache.maven.plugins.maven.compiler.plugin}</version>
 					<configuration>
 						<verbose>false</verbose>
 						<release>${java.compilation.release}</release>
@@ -196,18 +203,18 @@
 			<url>https://repository-oss.omnis.cloud/nexus/repository/releases/</url>
 		</repository>
 		<repository>
-				<id>ulisboa-repo</id>
-				<url>http://nexjen.ulisboa.pt/nexus/content/groups/public/</url>
+			<id>ulisboa-repo</id>
+			<url>http://nexjen.ulisboa.pt/nexus/content/groups/public/</url>
 		</repository>
 		<repository>
-				<id>qubIT-repo-public</id>
-				<url>https://repository.qub-it.com/nexus/content/groups/public</url>
+			<id>qubIT-repo-public</id>
+			<url>https://repository.qub-it.com/nexus/content/groups/public</url>
 		</repository>
 		<repository>
-				<id>qubIT-repo</id>
-				<url>https://repository.qub-it.com/nexus/content/groups/qubITRepo</url>
+			<id>qubIT-repo</id>
+			<url>https://repository.qub-it.com/nexus/content/groups/qubITRepo</url>
 		</repository>
-        </repositories>
+	</repositories>
 
 	<pluginRepositories>
 		<pluginRepository>
