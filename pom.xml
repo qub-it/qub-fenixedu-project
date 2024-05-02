@@ -20,9 +20,10 @@
 	<name>qub-fenixedu-project</name>
 
 	<properties>
-		<version.spotbugs>3.1.12</version.spotbugs>
-		<version.spotbugs.plugin.sb-contrib>7.4.6</version.spotbugs.plugin.sb-contrib>
-		<version.spotbugs.plugin.findsec>1.9.0</version.spotbugs.plugin.findsec>
+		<version.spotbugs>4.8.4</version.spotbugs>
+		<version.spotbugs.plugin>4.8.4.0</version.spotbugs.plugin>
+		<version.spotbugs.plugin.sb-contrib>7.6.4</version.spotbugs.plugin.sb-contrib>
+		<version.spotbugs.plugin.findsec>1.13.0</version.spotbugs.plugin.findsec>
 		<version.checkStyles.plugin>3.1.0</version.checkStyles.plugin>
 
 		<java.compilation.release>11</java.compilation.release>
@@ -51,7 +52,7 @@
 					<plugin>
 						<groupId>com.github.spotbugs</groupId>
 						<artifactId>spotbugs-maven-plugin</artifactId>
-						<version>${version.spotbugs}</version>
+						<version>${version.spotbugs.plugin}</version>
 						<dependencies>
 							<dependency>
 								<groupId>com.github.spotbugs</groupId>
