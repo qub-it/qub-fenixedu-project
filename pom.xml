@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.fenixedu</groupId>
 		<artifactId>fenix-framework-project</artifactId>
-		<version>2.4.0</version>
+		<version>3.0.0-beta1</version>
 		<relativePath />
 	</parent>
 
@@ -26,16 +26,17 @@
 		<version.spotbugs.plugin.findsec>1.13.0</version.spotbugs.plugin.findsec>
 		<version.checkStyles.plugin>3.1.0</version.checkStyles.plugin>
 
-		<java.compilation.release>11</java.compilation.release>
+		<java.compilation.release>17</java.compilation.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.org.apache.maven.plugins.maven.compiler.plugin>3.8.0</version.org.apache.maven.plugins.maven.compiler.plugin>
 
 		<version.org.apache.maven.plugins.maven.javadoc.plugin>3.1.1</version.org.apache.maven.plugins.maven.javadoc.plugin>
 
-		<version.pt.ist.fenix.framework>2.8.0</version.pt.ist.fenix.framework>
+		<version.pt.ist.fenix.framework>3.0.0</version.pt.ist.fenix.framework>
 		<version.pt.ist.ff.maven.plugin>${version.pt.ist.fenix.framework}</version.pt.ist.ff.maven.plugin>
-
+		<code.generator.class>pt.ist.fenixframework.backend.jvstm.InMemCodeGenerator</code.generator.class>
 		<version.org.apache.maven.plugins.maven.jar.plugin>3.2.0</version.org.apache.maven.plugins.maven.jar.plugin>
+		<version.ff.addons>1.0.0</version.ff.addons>
 	</properties>
 
 	<profiles>
@@ -133,7 +134,7 @@
 							<linkXref>true</linkXref>
 							<sourceEncoding>utf-8</sourceEncoding>
 							<minimumTokens>100</minimumTokens>
-							<targetJdk>11</targetJdk>
+							<targetJdk>17</targetJdk>
 							<excludes>
 								<exclude>**/*_Base.java</exclude>
 							</excludes>
@@ -150,6 +151,20 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>pt.ist</groupId>
+					<artifactId>ff-maven-plugin</artifactId>
+					<configuration>
+						<sourcesDirectory>src/main/java</sourcesDirectory>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>com.qubit.solution.fenixedu</groupId>
+							<artifactId>qub-fenixedu-fenix-framework-addons</artifactId>
+							<version>${version.ff.addons}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -197,6 +212,14 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.qubit.solution.fenixedu</groupId>
+			<artifactId>qub-fenixedu-fenix-framework-addons</artifactId>
+			<version>${version.ff.addons}</version>
+		</dependency>
+	</dependencies>
+
 
 	<repositories>
 		<repository>
