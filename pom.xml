@@ -36,6 +36,7 @@
 		<version.pt.ist.ff.maven.plugin>${version.pt.ist.fenix.framework}</version.pt.ist.ff.maven.plugin>
 		<code.generator.class>pt.ist.fenixframework.backend.jvstm.InMemCodeGenerator</code.generator.class>
 		<version.org.apache.maven.plugins.maven.jar.plugin>3.2.0</version.org.apache.maven.plugins.maven.jar.plugin>
+		<version.ff.addons>1.0.0</version.ff.addons>
 	</properties>
 
 	<profiles>
@@ -160,7 +161,7 @@
 						<dependency>
 							<groupId>com.qubit.solution.fenixedu</groupId>
 							<artifactId>qub-fenixedu-fenix-framework-addons</artifactId>
-							<version>0.0.0</version>
+							<version>${version.ff.addons}</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -215,7 +216,7 @@
 		<dependency>
 			<groupId>com.qubit.solution.fenixedu</groupId>
 			<artifactId>qub-fenixedu-fenix-framework-addons</artifactId>
-			<version>0.0.0</version>
+			<version>${version.ff.addons}</version>
 		</dependency>
 	</dependencies>
 
