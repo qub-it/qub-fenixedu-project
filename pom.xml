@@ -165,7 +165,7 @@
 		        </includes>
 		    </resource>
 		    <resource>
-		        <directory>${maven.multiModuleProjectDirectory}</directory>
+		        <directory>${basedir}</directory>
 		        <includes>
 		            <include>RELEASE_NOTES</include>
 		        </includes>

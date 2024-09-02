@@ -1,3 +1,5 @@
+- Improvement: Updates base-build so that inclusion of release notes in the jar is compliant with jenkins [#qubIT-Omnis-6687]
+
 2.2.0 (02-09-2024)
 - Improvement: Updates base-build to ensure Release Notes is included in jar [#qubIT-Omnis-6579]
 
