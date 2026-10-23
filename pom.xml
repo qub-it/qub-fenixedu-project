@@ -20,13 +20,14 @@
 	<name>qub-fenixedu-project</name>
 
 	<properties>
-		<version.spotbugs>4.8.4</version.spotbugs>
-		<version.spotbugs.plugin>4.8.4.0</version.spotbugs.plugin>
-		<version.spotbugs.plugin.sb-contrib>7.6.4</version.spotbugs.plugin.sb-contrib>
-		<version.spotbugs.plugin.findsec>1.13.0</version.spotbugs.plugin.findsec>
-		<version.checkStyles.plugin>3.4.0</version.checkStyles.plugin>
+	       <version.spotbugs>4.9.8</version.spotbugs>
+               <version.spotbugs.plugin>4.9.8.5</version.spotbugs.plugin>
+               <version.spotbugs.plugin.sb-contrib>7.7.4</version.spotbugs.plugin.sb-contrib>
+               <version.spotbugs.plugin.findsec>1.14.0</version.spotbugs.plugin.findsec>
+               <version.checkStyles.plugin>3.4.0</version.checkStyles.plugin>
 
 		<java.compilation.release>17</java.compilation.release>
+		<maven.compiler.release>${java.compilation.release}</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.org.apache.maven.plugins.maven.compiler.plugin>3.8.0</version.org.apache.maven.plugins.maven.compiler.plugin>
 
@@ -134,7 +135,7 @@
 							<linkXref>true</linkXref>
 							<sourceEncoding>utf-8</sourceEncoding>
 							<minimumTokens>100</minimumTokens>
-							<targetJdk>17</targetJdk>
+							<targetJdk>${java.compilation.release}</targetJdk>
 							<excludes>
 								<exclude>**/*_Base.java</exclude>
 							</excludes>
@@ -236,13 +237,18 @@
 					</executions>
 
 				</plugin>
+			        <plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-surefire-plugin</artifactId>
+                                    <version>3.5.4</version>
+                                </plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.8</version>
+				<version>0.8.13</version>
 				<executions>
 					<execution>
 						<id>pre-unit-test</id>

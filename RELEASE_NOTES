@@ -1,5 +1,7 @@
+- Improvement: Support for comping to jdk17 using jdk25 [#qubIT-Omnis-11714]
+
 3.1.0 (20-10-2026)
-- Improvement: Upading ff-addons from 1.0.0 to 2.0.0 [#qubIT-Omnis-10960]
+- Improvement: Updating ff-addons from 1.0.0 to 2.0.0 [#qubIT-Omnis-10960]
 
 3.0.0 (19-10-2026)
 - Improvement: Update ff to 4.0.0-FORK [#qubIT-Omnis-10960]
